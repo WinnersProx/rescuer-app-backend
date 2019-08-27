@@ -1,0 +1,62 @@
+{
+  "name": "rescuer-app-backend",
+  "version": "1.0.0",
+  "description": "An api for emergencies management",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run seeder && babel-node index.js",
+    "start-dev": "nodemon index --exec babel-node",
+    "build": "babel index.js --out-dir build",
+    "lint": "eslint ./*.js",
+    "migrate": "babel-node ./server/models/db/schema.js",
+    "seeder": "npm run migrate && babel-node ./server/models/db/seeder.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WinnersProx/rescuer-app-backend.git"
+  },
+  "author": "Winner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WinnersProx/way-farer-app/issues"
+  },
+  "homepage": "https://github.com/WinnersProx/way-farer-app#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@hapi/joi": "^15.1.0",
+    "@hapi/joi-date": "^1.3.0",
+    "bcrypt": "^3.0.6",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "coveralls": "^3.0.4",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "nyc": "^14.1.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.12.0",
+    "sequelize": "^5.16.0",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-express": "^4.0.7"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-watch": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.19.1"
+  }
+}
